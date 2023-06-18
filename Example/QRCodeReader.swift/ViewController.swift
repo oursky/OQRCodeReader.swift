@@ -40,10 +40,10 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate {
       })
     }
   }
-  lazy var reader: QRCodeReader = QRCodeReader()
+  lazy var reader: OQRCodeReader = OQRCodeReader()
   lazy var readerVC: QRCodeReaderViewController = {
     let builder = QRCodeReaderViewControllerBuilder {
-      $0.reader                  = QRCodeReader(metadataObjectTypes: [.qr], captureDevicePosition: .back)
+      $0.reader                  = OQRCodeReader(metadataObjectTypes: [.qr], captureDevicePosition: .back)
       $0.showTorchButton         = true
       $0.preferredStatusBarStyle = .lightContent
       $0.showOverlayView         = true
@@ -59,7 +59,7 @@ class ViewController: UIViewController, QRCodeReaderViewControllerDelegate {
 
   private func checkScanPermissions() -> Bool {
     do {
-      return try QRCodeReader.supportsMetadataObjectTypes()
+      return try OQRCodeReader.supportsMetadataObjectTypes()
     } catch let error as NSError {
       let alert: UIAlertController
 

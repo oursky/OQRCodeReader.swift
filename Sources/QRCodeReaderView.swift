@@ -71,7 +71,7 @@ final public class QRCodeReaderView: UIView, QRCodeReaderDisplayable {
     return ttb
   }()
 
-  private weak var reader: QRCodeReader?
+  private weak var reader: OQRCodeReader?
 
   public func setupComponents(with builder: QRCodeReaderViewControllerBuilder) {
     self.reader               = builder.reader
@@ -153,7 +153,7 @@ final public class QRCodeReaderView: UIView, QRCodeReaderDisplayable {
       let orientation                    = UIDevice.current.orientation
       let supportedInterfaceOrientations = application.supportedInterfaceOrientations(for: application.keyWindow)
 
-      connection.videoOrientation = QRCodeReader.videoOrientation(deviceOrientation: orientation, withSupportedOrientations: supportedInterfaceOrientations, fallbackOrientation: connection.videoOrientation)
+      connection.videoOrientation = OQRCodeReader.videoOrientation(deviceOrientation: orientation, withSupportedOrientations: supportedInterfaceOrientations, fallbackOrientation: connection.videoOrientation)
     }
   }
 

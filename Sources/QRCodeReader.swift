@@ -33,7 +33,7 @@ protocol QRCodeReaderLifeCycleDelegate: class {
 }
 
 /// Reader object base on the `AVCaptureDevice` to read / scan 1D and 2D codes.
-public final class QRCodeReader: NSObject, AVCaptureMetadataOutputObjectsDelegate {
+public final class OQRCodeReader: NSObject, AVCaptureMetadataOutputObjectsDelegate {
   private let sessionQueue         = DispatchQueue(label: "session queue")
   private let metadataObjectsQueue = DispatchQueue(label: "com.yannickloriot.qr", attributes: [], target: nil)
   

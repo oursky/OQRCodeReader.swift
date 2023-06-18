@@ -32,7 +32,7 @@ public class QRCodeReaderViewController: UIViewController {
   private let builder: QRCodeReaderViewControllerBuilder
 
   /// The code reader object used to scan the bar code.
-  public var codeReader: QRCodeReader {
+  public var codeReader: OQRCodeReader {
     return builder.reader
   }
 
